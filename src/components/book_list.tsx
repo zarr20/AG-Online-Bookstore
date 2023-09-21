@@ -15,8 +15,10 @@ interface BookListProps {
 
 const BookList: React.FC<BookListProps> = ({ books, searchQuery, onBookClick }) => {
     const filteredBooks = books ? books.filter((book) =>
-      book.title.toLowerCase().includes(searchQuery.toLowerCase())
+        book.title.toLowerCase().includes(searchQuery.toLowerCase())
     ) : [];
+
+   
 
     return (
         <div className="grid grid-cols-4 gap-4">
@@ -31,6 +33,7 @@ const BookList: React.FC<BookListProps> = ({ books, searchQuery, onBookClick }) 
                         <h2 className="text-xl font-semibold">{book.title}</h2>
                         <p className="text-gray-600">Penulis: {book.author}</p>
                         <p className="text-gray-700">{book.description}</p>
+                      
                     </div>
                 </div>
             ))}
